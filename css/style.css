@@ -1,0 +1,671 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+section {
+  position: relative;
+  float: left;
+  width: 100vw;
+  height: 100%;
+  color: #464647;
+}
+
+nav {
+  position: relative;
+  width: 90vw;
+  margin: 0 auto;
+  height: 100px;
+  line-height: 100px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #f8c065;
+}
+nav div {
+  position: relative;
+  width: 40vw;
+}
+nav div img {
+  position: relative;
+  margin-top: 3.5%;
+  margin-bottom: 3.5%;
+  width: 60px;
+  float: left;
+}
+nav div p {
+  position: relative;
+  float: left;
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  color: #464647;
+}
+nav div p:hover {
+  color: #dedfe0;
+}
+nav div ul {
+  position: relative;
+  float: right;
+}
+nav div ul li {
+  float: left;
+  width: 100px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: #464647;
+}
+nav div ul li:hover {
+  color: #dedfe0;
+}
+
+footer {
+  position: relative;
+  float: left;
+  width: 100vw;
+  height: 150px;
+  background-color: #dedfe0;
+  line-height: 50px;
+  font-size: 12px;
+}
+footer p {
+  position: relative;
+  float: left;
+  font-family: "Open Sans", sans-serif;
+  margin-left: 75px;
+}
+footer ul {
+  margin-right: 60px;
+}
+footer ul li {
+  position: relative;
+  float: right;
+  width: 150px;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  color: #464647;
+}
+
+#pageheader {
+  text-align: center;
+  font-family: "Didot", serif;
+  font-style: italic;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.container {
+  position: relative;
+  width: 90vw;
+  margin: 30px auto;
+}
+
+#head {
+  position: relative;
+  height: 600px;
+  background-color: #f8c065;
+  background-image: url("../img/looktwo.png");
+  background-size: contain;
+  background-position: 50px;
+  background-repeat: no-repeat;
+}
+#head h1 {
+  width: 600px;
+  position: relative;
+  float: right;
+  font-family: "Didot", serif;
+  font-size: 100px;
+  font-style: italic;
+  color: white;
+  top: 30%;
+  right: 20px;
+}
+
+#gallery {
+  margin-top: 60px;
+}
+
+.discover {
+  position: relative;
+  width: 80vw;
+  margin-left: 8vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.discover .mosaicgrid {
+  position: relative;
+  width: 40vw;
+  height: 600px;
+}
+.discover .mosaicgrid h1 {
+  padding-left: 10vw;
+  font-family: "Didot", serif;
+  font-size: 30px;
+}
+.discover .mosaicgrid .links {
+  letter-spacing: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.discover .mosaicgrid .links p {
+  font-family: "Didot", serif;
+}
+.discover .mosaicgrid p {
+  width: 300px;
+  padding-top: 5%;
+  padding-left: 30%;
+  font-family: "Open Sans", sans-serif;
+}
+.discover .mosaicgrid img {
+  width: 80%;
+}
+
+#build {
+  line-height: 200%;
+}
+#build .mosaicgrid h1 {
+  margin-top: 30%;
+}
+#build .mosaicgrid svg {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 30px;
+  margin-top: 5.5%;
+  margin-left: 8vw;
+  margin-right: 1vw;
+}
+#build .mosaicgrid svg line {
+  stroke: #f8c065;
+  stroke-width: 2;
+}
+#build .mosaicgrid .links {
+  color: #464647;
+}
+
+#wip {
+  position: relative;
+  background-image: url("../img/wip.png");
+  width: 80vw;
+  height: 450px;
+  margin-left: 8vw;
+  display: flex;
+  justify-content: flex-end;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -100px;
+}
+#wip .mosaicgrid {
+  color: #dedfe0;
+}
+#wip .mosaicgrid h1 {
+  margin-top: 11%;
+}
+#wip .mosaicgrid svg {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 30px;
+  margin-top: 9%;
+  margin-left: 10vw;
+  margin-right: 1vw;
+}
+#wip .mosaicgrid svg line {
+  stroke: #f8c065;
+  stroke-width: 2;
+}
+#wip .mosaicgrid .links {
+  color: #dedfe0;
+}
+#wip .mosaicgrid p {
+  position: relative;
+  margin-left: 2vw;
+  margin-top: 20px;
+  line-height: 150%;
+}
+
+#lookbooklink {
+  background-image: url("../img/looktwo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.1s;
+}
+#lookbooklink p {
+  color: transparent;
+}
+
+#lookbooklink:hover {
+  width: 40vw;
+  background-size: 70%;
+}
+#lookbooklink:hover svg {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 30px;
+  margin-top: 69%;
+  margin-left: 19vw;
+  margin-right: 1vw;
+  transition: 0.1s;
+}
+#lookbooklink:hover svg line {
+  stroke: #f8c065;
+  stroke-width: 2;
+}
+#lookbooklink:hover p {
+  width: 30%;
+  height: 50%;
+  background-color: rgba(222, 223, 224, 0.7);
+  position: relative;
+  margin-left: 3vw;
+  padding-left: 60%;
+  padding-top: 70%;
+  line-height: 100%;
+  color: #464647;
+  transition: 0.1s;
+}
+
+#mainbuild {
+  position: relative;
+  width: 100vw;
+  height: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: space-around;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 20px;
+}
+#mainbuild div {
+  height: 100%;
+  position: relative;
+  float: left;
+}
+#mainbuild h3 {
+  font-family: "Open Sans", sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+#customoptions {
+  position: relative;
+  width: 20%;
+  margin-left: 5%;
+  transition: 0.5s;
+}
+#customoptions h3 {
+  padding-top: 30%;
+}
+
+#meshup, #stretch, #fab {
+  position: absolute;
+  width: 100%;
+  margin-left: -1000px;
+  transition: 0.2s;
+}
+#meshup p, #stretch p, #fab p {
+  position: relative;
+  float: left;
+  width: 30%;
+  font-family: "Open Sans", sans-serif;
+  color: #464647;
+  font-size: 18px;
+}
+#meshup ul, #stretch ul, #fab ul {
+  position: relative;
+  float: left;
+  width: 50%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+#meshup ul li, #stretch ul li, #fab ul li {
+  position: relative;
+  width: 200px;
+  height: 60px;
+  margin: 5px;
+}
+#meshup ul li span, #stretch ul li span, #fab ul li span {
+  position: relative;
+  float: left;
+  width: 60px;
+  height: 60px;
+  border: 1px solid transparent;
+  border-radius: 100%;
+  box-shadow: 0 0 10px #464647;
+}
+#meshup ul li p, #stretch ul li p, #fab ul li p {
+  position: relative;
+  float: left;
+  font-size: 14px;
+  width: 100px;
+  line-height: 60px;
+  margin-left: 5%;
+  font-family: "Didot", serif;
+  font-style: italic;
+}
+#meshup ul .black, #stretch ul .black, #fab ul .black {
+  background-color: black;
+  color: #dedfe0;
+}
+#meshup ul .white, #stretch ul .white, #fab ul .white {
+  background-color: white;
+}
+#meshup ul .blue, #stretch ul .blue, #fab ul .blue {
+  background-color: #071d6d;
+  color: #dedfe0;
+}
+#meshup ul .red, #stretch ul .red, #fab ul .red {
+  background-color: #e20909;
+}
+#meshup ul .gray, #stretch ul .gray, #fab ul .gray {
+  background-color: #464647;
+  color: #dedfe0;
+}
+
+#window {
+  position: relative;
+  width: 510px;
+  height: 600px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: #dedfe0;
+}
+#window #scroll {
+  width: 1530px;
+  transition: 0.25s;
+}
+#window #scroll .customoutfit {
+  position: relative;
+  float: left;
+  width: 510px;
+}
+#window #scroll .customoutfit #man {
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+#window #scroll .customoutfit #man img {
+  width: 100%;
+}
+#window #scroll .customoutfit #grid {
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  top: 0;
+  left: 0;
+}
+#window #scroll .customoutfit #grid img {
+  position: absolute;
+  width: 82%;
+  top: 0.75%;
+  left: 5%;
+}
+#window #scroll .customoutfit #lp {
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  top: 0;
+  left: 0;
+}
+#window #scroll .customoutfit #lp img {
+  position: absolute;
+  width: 11%;
+  top: 32.5%;
+  left: 16.75%;
+  z-index: 10;
+}
+#window #scroll .customoutfit #rp {
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  top: 0;
+  left: 0;
+}
+#window #scroll .customoutfit #rp img {
+  position: absolute;
+  width: 13%;
+  top: 34%;
+  left: 71%;
+  z-index: 10;
+}
+#window #scroll .customoutfit #tb {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+#window #scroll .customoutfit #tb img {
+  position: absolute;
+  width: 48.75%;
+  top: 59.5%;
+  left: 26%;
+}
+#window #scroll .customoutfit #mb {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+#window #scroll .customoutfit #mb img {
+  position: absolute;
+  width: 43.25%;
+  top: 67%;
+  left: 29.25%;
+}
+#window #scroll .customoutfit #bb {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+#window #scroll .customoutfit #bb img {
+  position: absolute;
+  width: 48%;
+  top: 72%;
+  left: 27.15%;
+}
+
+#scrollflip {
+  position: relative;
+  float: left;
+  width: 100vw;
+  height: 50px;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#scrollflip .bullet {
+  position: relative;
+  float: left;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #dedfe0;
+  border: 4px solid #464647;
+  cursor: pointer;
+}
+
+#sales {
+  width: 20%;
+  margin-right: 5%;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#sales div {
+  width: 85%;
+  height: 70%;
+  margin-left: 20%;
+}
+#sales div h3 {
+  width: 48%;
+  position: relative;
+  float: left;
+  font-size: 16px;
+}
+#sales div ul {
+  position: relative;
+  width: 48%;
+  float: left;
+}
+#sales div ul li {
+  font-size: 14px;
+}
+#sales div div {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-top: 2px solid #464647;
+  margin-left: 0;
+}
+#sales div p {
+  position: relative;
+  width: 100%;
+  font-size: 8px;
+  top: 50%;
+  left: -15%;
+}
+#sales div button {
+  position: relative;
+  background-color: transparent;
+  border: 2px solid #f8c065;
+  width: 80%;
+  height: 10%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: #464647;
+  margin-top: 10%;
+  margin-left: 10%;
+  cursor: pointer;
+}
+
+#backoptions {
+  position: relative;
+  width: 510px;
+  height: 600px;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+#backoptions span {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #f8c065;
+  border-radius: 100%;
+  border: 5px solid #464647;
+  cursor: pointer;
+}
+#backoptions span.grid {
+  top: 25%;
+  left: 18%;
+}
+#backoptions span.fabric {
+  top: 40%;
+  left: 71%;
+}
+#backoptions span.elastic {
+  top: 60%;
+  left: 24%;
+}
+#backoptions span.grid:hover, #backoptions span.fabric:hover, #backoptions span.elastic:hover {
+  background-color: #dedfe0;
+}
+#backoptions p {
+  position: absolute;
+  font-family: "Open Sans", sans-serif;
+  border-bottom: 1px solid #f8c065;
+  font-family: "Didot", serif;
+  font-style: italic;
+}
+#backoptions p.grid {
+  top: 25.5%;
+  left: 11%;
+}
+#backoptions p.fabric {
+  top: 40%;
+  left: 61.5%;
+}
+#backoptions p.elastic {
+  top: 60%;
+  left: 14%;
+}
+
+.value {
+  text-align: right;
+}
+
+.categories {
+  margin-left: 5px;
+}
+
+#navmargin {
+  position: relative;
+  float: left;
+  width: 5vw;
+  height: 100px;
+}
+
+#about {
+  position: relative;
+  width: 70vw;
+  height: 500px;
+  margin: 40px auto;
+  background-image: url("../img/about.jpg");
+  background-size: cover;
+  padding: 50px;
+}
+#about h1 {
+  width: 400px;
+  font-family: "Didot", serif;
+  font-style: italic;
+  border-bottom: 5px solid #f8c065;
+  background-color: rgba(70, 70, 71, 0.9);
+  color: #dedfe0;
+  font-size: 36px;
+  margin-top: 20px;
+  padding: 20px;
+}
+#about p {
+  width: 400px;
+  background-color: rgba(70, 70, 71, 0.9);
+  color: #dedfe0;
+  font-family: "Open Sans", sans-serif;
+  padding: 20px;
+}
+
+#appointment {
+  width: 80vw;
+  height: 58vh;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+}
+#appointment .info {
+  width: 100%;
+}
+#appointment .info h1 {
+  font-family: "Didot", serif;
+  font-style: italic;
+  line-height: 100px;
+}
+#appointment .info ul li {
+  list-style: circle;
+  font-family: "Open Sans", sans-serif;
+}
+#appointment .info p {
+  font-family: "Open Sans", sans-serif;
+}

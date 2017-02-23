@@ -1,0 +1,738 @@
+// ----------------------------------------------------------
+// VARIABLES
+// ----------------------------------------------------------
+$main-color: #f8c065;
+$lightaccent: #dedfe0;
+$darkaccent: #464647;
+$font-main: 'Didot', serif;
+$font-sub: 'Open Sans', sans-serif;
+$leading: 10px;
+$header-font-size: 3 * $leading; //30px;
+$content-font-size: 1.4 * $leading; //14px;
+$sub-content-font-size: 1.2 * $leading;
+
+// ----------------------------------------------------------
+// UNIVERSAL CODE
+// ----------------------------------------------------------
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+
+section{
+    position: relative;
+    float: left;
+    width: 100vw;
+    height: 100%;
+    color: $darkaccent;
+}
+
+// ----------------------------------------------------------
+// LAPTOP SCREEN
+// ----------------------------------------------------------
+
+// --------------------- ALL SCREENS ------------------------
+
+nav{
+    position: relative;
+    width: 90vw; 
+    margin: 0 auto;
+    height: 10 * $leading;
+    line-height: 10 * $leading;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid $main-color;
+    div{
+        position: relative;
+        width: 40vw;
+        img{
+            position: relative;
+            margin-top: 3.5%;
+            margin-bottom: 3.5%;
+            width: 6 * $leading;
+            float: left;
+        }
+        p{
+            position: relative;
+            float: left;
+            font-family: $font-sub;
+            font-size: $header-font-size;
+            color: $darkaccent;
+        }
+        p:hover{
+            color: $lightaccent;
+        }
+        ul{
+            position: relative;
+            float: right;
+            li{
+                float: left;
+                width: 10* $leading;
+                text-align: center;
+                font-family: $font-sub;
+                font-size: $content-font-size;
+                color: $darkaccent;
+            }
+            li:hover{
+                color: $lightaccent;
+            }
+        }
+    }   
+}
+
+footer{
+    position: relative;
+    float: left;
+    width: 100vw;
+    height: 15 * $leading;
+    background-color: $lightaccent;
+    line-height: 5 * $leading;
+    font-size: 12px;
+
+    p{
+        position: relative;
+        float: left;
+        font-family: $font-sub;
+        margin-left: 75px;
+    }
+
+    ul{
+        margin-right: 60px;
+        li{
+            position: relative;
+            float: right;
+            width: 150px;
+            font-family: $font-sub;
+            text-align: center;
+            color: $darkaccent;
+        }
+    }
+}
+
+#pageheader{
+    text-align: center;
+    font-family: $font-main;
+    font-style: italic;
+    padding: 10px; 
+    font-size: 30px;
+}
+
+// --------------------- HOME SCREEN ------------------------
+
+.container{
+    position: relative;
+    width: 90vw;
+    margin: 30px auto;
+}
+
+#head{
+    position: relative;
+    height: 600px;
+    background-color: $main-color; 
+    background-image: url('../img/looktwo.png');
+    background-size: contain;
+    background-position: 50px;
+    background-repeat: no-repeat;
+        // svg{
+        //     position: absolute;
+        //     float: right;
+        //     right: 100px;   
+        //     width: 600px;
+        //     height: 600px;
+        //     margin-top: 0;
+
+        //     path{
+        //         stroke-width: 2px;
+        //         stroke: $darkaccent;
+        //         fill: none;
+        //     }
+        // }
+    h1{
+        width: 600px;
+        position: relative;
+        float: right;
+        font-family: $font-main; 
+        font-size: 100px;
+        font-style: italic;
+        color: white;
+        top: 30%;
+        right: 20px;
+    }
+}
+
+#gallery{
+    margin-top: 60px;
+}
+
+.discover{
+    position: relative;
+    width: 80vw;
+    margin-left: 8vw;
+    display: flex;
+    justify-content: flex-end;
+
+    .mosaicgrid{
+        position: relative;
+        width: 40vw;
+        height: 600px;
+        h1{
+            padding-left: 10vw;
+            font-family: $font-main;
+            font-size: 30px;
+        }
+        .links{
+            letter-spacing: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            p{
+                font-family: $font-main;
+            }
+        }
+        p{
+            width: 300px;
+            padding-top: 5%;
+            padding-left: 30%;
+            font-family: $font-sub;
+        }
+
+        img{
+            width: 80%;
+        }
+    }
+}
+
+#build{
+    line-height: 200%;
+    .mosaicgrid{
+        h1{
+            margin-top: 30%;
+        }
+        svg{
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 30px;
+            margin-top: 5.5%;
+            margin-left: 8vw;
+            margin-right: 1vw;
+
+            line{
+                stroke: $main-color;
+                stroke-width: 2;
+            }
+        }
+        .links{
+            color: $darkaccent;
+        }
+    }
+}
+
+#wip{
+    position: relative;
+    background-image: url('../img/wip.png');
+    width: 80vw;
+    height: 450px;
+    margin-left: 8vw;
+    display: flex;
+    justify-content: flex-end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -100px;
+
+    .mosaicgrid{
+        color: $lightaccent;
+        h1{
+            margin-top: 11%;
+        }
+
+        svg{
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 30px;
+            margin-top: 9%;
+            margin-left: 10vw;
+            margin-right: 1vw;
+
+            line{
+                stroke: $main-color;
+                stroke-width: 2;
+            }
+        }
+        .links{
+            color: $lightaccent;
+        }
+        p{
+            position: relative;
+            margin-left: 2vw;
+            margin-top: 20px;
+            line-height: 150%;
+        }
+    }
+}
+
+#lookbooklink{
+    background-image: url('../img/looktwo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    p{
+        color: transparent;
+    }
+    transition: 0.1s;
+}
+
+#lookbooklink:hover{
+    // opacity: 0.6;
+    width: 40vw;
+    background-size: 70%;
+    svg{
+        position: relative;
+        float: left;
+        width: 100px;
+        height: 30px;
+        margin-top: 69%;
+        margin-left: 19vw;
+        margin-right: 1vw;
+        transition: 0.1s;
+
+        line{
+            stroke: $main-color;
+            stroke-width: 2;
+        }
+    }
+    p{
+        width: 30%;
+        height: 50%;
+        background-color: rgba(222, 223, 224, 0.7);
+        position: relative;
+        margin-left: 3vw;
+        padding-left: 60%;
+        padding-top: 70%;
+        line-height: 100%;
+        color: $darkaccent;
+        transition: 0.1s;
+    }
+}
+
+// -------------------- BUILD SCREEN -----------------------
+#mainbuild{
+    position: relative;
+    width: 100vw;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: space-around;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 20px;
+    div{
+        height: 100%;
+        position: relative;
+        float: left;
+    }
+    h3{
+        font-family: $font-sub;
+        margin-top: 20px;   
+        margin-bottom: 20px; 
+        font-size: 16px;  
+    }
+}
+
+#customoptions{
+    position: relative;
+    width: 20%;
+    margin-left: 5%;
+    transition: 0.5s;
+    h3{
+        padding-top: 30%;
+    }
+}
+
+#meshup, #stretch, #fab{
+    position: absolute;
+    width: 100%;
+    margin-left: -1000px;
+    transition: 0.2s;
+    p{
+        position: relative;
+        float: left;
+        width: 30%;
+        font-family: $font-sub;
+        color: $darkaccent;
+        font-size: 18px;
+    }
+    ul{
+        position: relative;
+        float: left;
+        width: 50%;
+        font-family: $font-sub;
+        font-size: 14px;
+        margin-bottom: 20px;
+        li{
+            position: relative;
+            width: 200px;
+            height: 60px;
+            margin: 5px;
+            span{
+                position: relative;
+                float: left;
+                width: 60px;
+                height: 60px;
+                border: 1px solid transparent;
+                border-radius: 100%;
+                box-shadow: 0 0 10px $darkaccent;
+            }
+            p{
+                position: relative;
+                float: left;
+                font-size: 14px;
+                width: 100px;
+                line-height: 60px;
+                margin-left: 5%;
+                font-family: $font-main;
+                font-style: italic; 
+            }
+        }
+        .black{
+            background-color: black;
+            color: $lightaccent;
+        }
+        .white{
+            background-color: white;
+        }
+        .blue{
+            background-color: #071d6d;
+            color: $lightaccent;
+        }
+        .red{
+            background-color: #e20909;
+        }
+        .gray{
+            background-color: $darkaccent;
+            color: $lightaccent;
+        }
+    }
+}
+
+#window{
+    position: relative;
+    width: 510px;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: $lightaccent;
+    #scroll{
+        width: 1530px;
+        transition: 0.25s; 
+        .customoutfit{
+            position: relative;
+            float: left;
+            width: 510px;
+            #man{
+                position: absolute;
+                width: 100%;
+                z-index: 0;
+                img{
+                    width: 100%;
+                }
+            }
+            #grid{
+                position: absolute;
+                width: 100%;
+                z-index: 5;
+                top: 0;
+                left: 0;
+                img{
+                    position: absolute;
+                    width:82%;
+                    top: 0.75%;
+                    left: 5%;
+                }
+            }
+            #lp{
+                position: absolute;
+                width: 100%;
+                z-index: 5;
+                top: 0;
+                left: 0;
+                img{
+                    position: absolute;
+                    width: 11%;
+                    top: 32.5%;
+                    left: 16.75%;
+                    z-index: 10;
+                }
+            }
+            #rp{
+                position: absolute;
+                width: 100%;
+                z-index: 5;
+                top: 0;
+                left: 0;
+                img{
+                    position: absolute;
+                    width: 13%;
+                    top: 34%;
+                    left: 71%;
+                    z-index: 10;
+                }
+            }
+            #tb{
+                position: absolute;
+                width: 100%;
+                top: 0;
+                left: 0;
+                img{
+                    position: absolute;
+                    width: 48.75%;
+                    top: 59.5%;
+                    left: 26%;
+                }
+            }
+            #mb{
+                position: absolute;
+                width: 100%;
+                top: 0;
+                left: 0;
+                img{
+                    position: absolute;
+                    width: 43.25%;
+                    top: 67%;
+                    left: 29.25%;
+                }
+            }
+            #bb{
+                position: absolute;
+                width: 100%;
+                top: 0;
+                left: 0;
+                img{
+                    position: absolute;
+                    width: 48%;
+                    top: 72%;
+                    left: 27.15%;
+                }
+            }
+        }
+    }
+}
+
+#scrollflip{
+    position: relative;
+    float: left;
+    width: 100vw;
+    height: 50px;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .bullet{
+        position: relative;
+        float: left;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: $lightaccent; 
+        border: 4px solid $darkaccent;
+        cursor: pointer;
+    }
+}
+
+#sales{
+    width: 20%;
+    margin-right: 5%;
+    font-family: $font-sub;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    div{
+        width: 85%;
+        height: 70%;
+        margin-left: 20%;
+        h3{
+            width: 48%;
+            position: relative;
+            float: left;
+            font-size: 16px;
+        }
+        ul{
+            position: relative;
+            width: 48%;
+            float: left;
+            li{
+                font-size: 14px;
+            }
+        }
+        div{
+            position: relative;
+            width: 100%;
+            height: 60px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border-top: 2px solid $darkaccent;
+            margin-left: 0;
+        }
+        p{
+            position: relative;
+            width: 100%;
+            // text-align: center;
+            font-size: 8px;
+            top: 50%;
+            left: -15%;
+        }
+        button{
+            position: relative;
+            background-color: transparent;   
+            border: 2px solid $main-color;
+            width: 80%;
+            height: 10%;
+            font-family: $font-sub;
+            font-size: 14px;
+            color: $darkaccent;
+            margin-top: 10%;
+            margin-left: 10%;
+            cursor: pointer;
+        }
+    }
+}
+
+#backoptions{
+    position: relative;
+    width: 510px;
+    height: 600px;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    span{
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background-color: $main-color;
+        border-radius: 100%;
+        border: 5px solid $darkaccent;
+        cursor: pointer;
+        &.grid{
+            top: 25%;
+            left: 18%;
+        }
+        &.fabric{
+            top: 40%;
+            left: 71%;
+        }
+        &.elastic{
+            top: 60%;
+            left: 24%;
+        }
+        &.grid:hover, &.fabric:hover, &.elastic:hover{
+            background-color: $lightaccent;
+        }
+    }
+    p{
+        position: absolute;
+        font-family: $font-sub;
+        border-bottom: 1px solid $main-color;
+        font-family: $font-main;
+        font-style: italic; 
+        &.grid{
+            top: 25.5%;
+            left: 11%;
+        }
+        &.fabric{
+            top: 40%;
+            left: 61.5%;
+        }
+        &.elastic{
+            top: 60%;
+            left: 14%;
+        }
+    }
+}
+
+.value{
+    text-align: right;
+}
+
+.categories{
+    margin-left: 5px;
+}
+
+#navmargin{
+    position: relative;
+    float: left;
+    width: 5vw;
+    height: 100px;
+}
+
+// -------------------- ABOUT SCREEN -----------------------
+#about{
+    position: relative;
+    width: 70vw;
+    height: 500px;
+    margin: 40px auto;
+    background-image: url('../img/about.jpg');
+    background-size: cover;
+    padding: 50px;
+
+    h1{
+        width: 400px;
+        font-family: $font-main;
+        font-style: italic;
+        border-bottom: 5px solid $main-color;
+        background-color: rgba(70,70,71, 0.9);
+        color: $lightaccent;
+        font-size: 36px;
+        margin-top: 20px;
+        padding: 20px;
+    }
+    p{
+        width: 400px;
+        background-color: rgba(70,70,71, 0.9);
+        color: $lightaccent;
+        font-family: $font-sub;
+        padding: 20px;
+    }
+}
+
+// -------------------- APPOINTMENT -----------------------
+#appointment{
+    width: 80vw;
+    height: 58vh;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+
+    .info{
+        width: 100%;
+        h1{
+            font-family: $font-main;
+            font-style: italic;
+            line-height: 100px;
+        }
+        ul{
+            li{
+                list-style: circle;
+                font-family: $font-sub;
+            }
+        }
+        p{
+            font-family: $font-sub;
+        }
+    }
+}
+
+// ----------------------------------------------------------
+// IPADs and TABLETS
+// ----------------------------------------------------------
+
+@media only screen and (max-width: 960px){
+
+}
