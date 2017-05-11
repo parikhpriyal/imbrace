@@ -2,14 +2,22 @@
 // VARIABLES
 // ----------------------------------------------------------
 $main-color: #f8c065;
+$main-header: #f5a623;
 $lightaccent: #dedfe0;
 $darkaccent: #464647;
 $font-main: 'Didot', serif;
 $font-sub: 'Open Sans', sans-serif;
 $leading: 10px;
-$header-font-size: 3 * $leading; //30px;
-$content-font-size: 1.4 * $leading; //14px;
-$sub-content-font-size: 1.2 * $leading;
+$large-header-font-size: 2.8 * $leading; //28px;
+$large-content-font-size: 1.4 * $leading; //12px;
+$large-sub-content-font-size: 1.2 * $leading; //10px;
+$header-font-size: 2.4 * $leading; //24px;
+$content-font-size: 1.2 * $leading; //12px;
+$sub-content-font-size: 1.0 * $leading; //12px;
+$small-header-font-size: 2.0 * $leading; //20px;
+$small-content-font-size: 1.2 * $leading; //12px;
+$small-sub-content-font-size: 1.0 * $leading; //10px;
+
 
 // ----------------------------------------------------------
 // UNIVERSAL CODE
@@ -28,375 +36,559 @@ section{
     position: relative;
     float: left;
     width: 100vw;
-    height: 100%;
+    min-height: 70vh;
     color: $darkaccent;
 }
 
 // ----------------------------------------------------------
-// LAPTOP SCREEN
+// MULTIPLE SCREENS
 // ----------------------------------------------------------
 
 // --------------------- ALL SCREENS ------------------------
-
 nav{
     position: relative;
     width: 90vw; 
+    height: 8 * $leading;
     margin: 0 auto;
-    height: 10 * $leading;
-    line-height: 10 * $leading;
+    margin-bottom: 3 * $leading;
     display: flex;
     justify-content: space-around;
-    border-bottom: 1px solid $main-color;
+    align-items: center;
+    z-index: 20;
+    .hamburger-menu{
+        display: none;
+    }
+    .mobile-view{
+        display: none;
+    }
     div{
         position: relative;
-        width: 40vw;
+        width: 50vw;
         img{
             position: relative;
-            margin-top: 3.5%;
-            margin-bottom: 3.5%;
-            width: 6 * $leading;
             float: left;
+            width: 6 * $leading;
+            margin-right:10px;
         }
         p{
             position: relative;
             float: left;
             font-family: $font-sub;
-            font-size: $header-font-size;
+            font-size: $large-content-font-size;
             color: $darkaccent;
-        }
-        p:hover{
-            color: $lightaccent;
+            font-weight: 600;
+            letter-spacing: 1.5px;
         }
         ul{
             position: relative;
             float: right;
+            display: flex;
             li{
                 float: left;
-                width: 10* $leading;
-                text-align: center;
+                margin-left: 5 * $leading;
                 font-family: $font-sub;
-                font-size: $content-font-size;
+                font-size: $large-content-font-size;
+                font-weight: 600;
                 color: $darkaccent;
+                letter-spacing: 1.5px;
             }
             li:hover{
-                color: $lightaccent;
+                color: $main-color;
             }
         }
-    }   
+    }
+    div:first-child{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+#announce{
+    position: relative;
+    font-family: $font-sub;
+    font-size: $content-font-size;
+    font-weight: 500;
+    text-align: center;
+    padding: 5px;
+    color: $lightaccent;
 }
 
 footer{
     position: relative;
     float: left;
-    width: 100vw;
+    width: 95vw;
     height: 15 * $leading;
-    background-color: $lightaccent;
     line-height: 5 * $leading;
-    font-size: 12px;
+    font-size: $sub-content-font-size;
+    margin-top: 4 * $leading;
+    opacity: 0.7;
 
     p{
         position: relative;
         float: left;
         font-family: $font-sub;
-        margin-left: 75px;
+        margin-left: 7.5 * $leading;
+        color: $darkaccent;
+        letter-spacing: 1.5px;
     }
 
     ul{
-        margin-right: 60px;
         li{
             position: relative;
             float: right;
-            width: 150px;
             font-family: $font-sub;
-            text-align: center;
+            text-align: right;
             color: $darkaccent;
+            margin-left: 5%;
+            letter-spacing: 1.5px;
         }
     }
 }
 
-#pageheader{
-    text-align: center;
+h1{
     font-family: $font-main;
     font-style: italic;
-    padding: 10px; 
-    font-size: 30px;
+    font-size: $header-font-size;
 }
-
-// --------------------- HOME SCREEN ------------------------
 
 .container{
     position: relative;
     width: 90vw;
-    margin: 30px auto;
+    margin: 0 auto;
 }
 
+// --------------------- HOME SCREEN ------------------------
 #head{
     position: relative;
-    height: 600px;
-    background-color: $main-color; 
-    background-image: url('../img/looktwo.png');
-    background-size: contain;
-    background-position: 50px;
-    background-repeat: no-repeat;
-        // svg{
-        //     position: absolute;
-        //     float: right;
-        //     right: 100px;   
-        //     width: 600px;
-        //     height: 600px;
-        //     margin-top: 0;
-
-        //     path{
-        //         stroke-width: 2px;
-        //         stroke: $darkaccent;
-        //         fill: none;
-        //     }
-        // }
-    h1{
-        width: 600px;
-        position: relative;
-        float: right;
-        font-family: $font-main; 
-        font-size: 100px;
-        font-style: italic;
-        color: white;
-        top: 30%;
-        right: 20px;
-    }
-}
-
-#gallery{
-    margin-top: 60px;
-}
-
-.discover{
-    position: relative;
-    width: 80vw;
-    margin-left: 8vw;
-    display: flex;
-    justify-content: flex-end;
-
-    .mosaicgrid{
-        position: relative;
-        width: 40vw;
-        height: 600px;
-        h1{
-            padding-left: 10vw;
-            font-family: $font-main;
-            font-size: 30px;
-        }
-        .links{
-            letter-spacing: 8px;
-            font-weight: bold;
-            text-decoration: none;
-            p{
-                font-family: $font-main;
-            }
-        }
-        p{
-            width: 300px;
-            padding-top: 5%;
-            padding-left: 30%;
-            font-family: $font-sub;
-        }
-
-        img{
-            width: 80%;
-        }
-    }
-}
-
-#build{
-    line-height: 200%;
-    .mosaicgrid{
-        h1{
-            margin-top: 30%;
-        }
-        svg{
-            position: relative;
-            float: left;
-            width: 100px;
-            height: 30px;
-            margin-top: 5.5%;
-            margin-left: 8vw;
-            margin-right: 1vw;
-
-            line{
-                stroke: $main-color;
-                stroke-width: 2;
-            }
-        }
-        .links{
-            color: $darkaccent;
-        }
-    }
-}
-
-#wip{
-    position: relative;
-    background-image: url('../img/wip.png');
-    width: 80vw;
-    height: 450px;
-    margin-left: 8vw;
-    display: flex;
-    justify-content: flex-end;
+    background-color: $darkaccent; 
+    width: 100vw;
+    height: 75vh;
+    min-height: 500px;
+    background: url('../img/home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-y: -100px;
-
-    .mosaicgrid{
-        color: $lightaccent;
-        h1{
-            margin-top: 11%;
-        }
-
-        svg{
-            position: relative;
-            float: left;
-            width: 100px;
-            height: 30px;
-            margin-top: 9%;
-            margin-left: 10vw;
-            margin-right: 1vw;
-
-            line{
-                stroke: $main-color;
-                stroke-width: 2;
-            }
-        }
-        .links{
-            color: $lightaccent;
-        }
-        p{
-            position: relative;
-            margin-left: 2vw;
-            margin-top: 20px;
-            line-height: 150%;
-        }
-    }
-}
-
-#lookbooklink{
-    background-image: url('../img/looktwo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
     background-position: center;
-    p{
-        color: transparent;
+    div{
+        position: relative;
+        float: left;
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 7%;
+        h1{
+            position: relative;
+            font-family: $font-main; 
+            font-size: 6vw;
+            font-style: normal;
+            font-weight: 200;
+            color: $main-header;
+            transition: 0.2s;
+            text-shadow: 0 2px 4px $lightaccent;
+            margin-top: -50px;
+        }
     }
-    transition: 0.1s;
 }
 
-#lookbooklink:hover{
-    // opacity: 0.6;
-    width: 40vw;
-    background-size: 70%;
+#hometabs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mosaicgrid{
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    h1{
+        font-size: $large-header-font-size;
+        padding-top: 2%;
+    }
+    p{
+        padding-top: 5%;
+        padding-left: 30%;
+        font-family: $font-sub;
+        font-size: $large-content-font-size;
+    }
     svg{
         position: relative;
         float: left;
-        width: 100px;
-        height: 30px;
-        margin-top: 69%;
-        margin-left: 19vw;
-        margin-right: 1vw;
-        transition: 0.1s;
-
+        width: 16 * $leading;
+        height: 2.5 * $leading;
         line{
             stroke: $main-color;
             stroke-width: 2;
         }
     }
-    p{
-        width: 30%;
-        height: 50%;
-        background-color: rgba(222, 223, 224, 0.7);
+    .links{
+        letter-spacing: 8px;
+        font-weight: bold;
+        text-decoration: none;
+        p{
+            font-family: $font-main;
+            color: $darkaccent;
+        }
+        p:hover{
+            color: $main-color;
+            transition: 0.2s;
+        }
+    }
+}
+
+#wip{
+    width: 40.5vw;
+    height: 50vh;
+    min-height: 400px;
+    margin-top: 8 * $leading;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    border: 1px solid $lightaccent;
+    padding: 1%;
+    div:first-child{
         position: relative;
-        margin-left: 3vw;
-        padding-left: 60%;
-        padding-top: 70%;
-        line-height: 100%;
-        color: $darkaccent;
-        transition: 0.1s;
+        width: 99%;
+        height: 50%;
+        background-image: url('../img/wip.png');
+        background-size: cover;
+    }
+    .mosaicgrid{
+        height: 50%;
+        svg{
+            margin-top: 5%;
+        }
+    }
+}
+
+#build{
+    width: 40.5vw;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    border: 1px solid $lightaccent;
+    margin-top: 8 * $leading;
+    padding: 1%;
+    div:first-child{
+        position: relative;
+        width: 99%;
+        height: 50%;
+        background-image: url('../img/create.jpg');
+        background-size: cover;
+    }
+    .mosaicgrid{
+        height: 50%;
+        svg{
+            margin-top: 5%;
+        }
+    }
+}
+
+#lookbook{
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    background-color: $darkaccent;
+    background-image: url('../img/lookbook.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 8 * $leading;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-end;
+    .mosaicgrid{
+        display: none;
+    }
+}
+
+#lookbook:hover{
+    opacity: 0.7;
+    .mosaicgrid{
+        position: relative;
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        svg{
+            position: relative;
+            float: left;
+            width: 17 * $leading;
+            height: 2.5 * $leading;
+            line{
+                stroke: $main-color;
+                stroke-width: 2;
+            }
+        }
+        .links{
+            p{
+                padding-top: 0%;
+                padding-left: 5%;
+                font-family: $font-main;
+                color: $lightaccent;
+            }
+            p:hover{
+                color: $main-color;
+                transition: 0.2s;
+            }
+        }
+    }
+}
+
+// ----------------------- LOOKBOOK ------------------------
+#gallery{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    div{
+        width: 49%;
+        img{
+            position: relative;
+            width: 100%;
+        } 
     }
 }
 
 // -------------------- BUILD SCREEN -----------------------
-#mainbuild{
-    position: relative;
-    width: 100vw;
-    height: 600px;
-    margin: 0 auto;
+#mobilemessage{
+    display: none;
+}
+
+#configurator{
     display: flex;
-    align-items: space-around;
-    justify-content: center;
     flex-direction: row;
-    margin-top: 20px;
-    div{
-        height: 100%;
-        position: relative;
-        float: left;
-    }
-    h3{
-        font-family: $font-sub;
-        margin-top: 20px;   
-        margin-bottom: 20px; 
-        font-size: 16px;  
-    }
+    justify-content: space-around;
 }
 
 #customoptions{
-    position: relative;
-    width: 20%;
-    margin-left: 5%;
+    width: 30%;
+    height: 60vh;
+    min-height: 500px;
     transition: 0.5s;
     h3{
-        padding-top: 30%;
+        font-family: $font-main;
+        font-style: italic;
+        line-height: 10 * $leading;
+        font-size: 24px;  
+        margin-top: 10vh;
     }
 }
 
-#meshup, #stretch, #fab{
-    position: absolute;
-    width: 100%;
-    margin-left: -1000px;
-    transition: 0.2s;
-    p{
-        position: relative;
-        float: left;
-        width: 30%;
-        font-family: $font-sub;
-        color: $darkaccent;
-        font-size: 18px;
+#window{
+    position: relative;
+    float: left;
+    width: 40%;
+    max-width: 510px;   
+    height: 65vh;
+    min-height: 700px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    #scroll{
+        width: 1530px;
+        transition: 0.25s; 
+        .customoutfit{
+            position: relative;
+            float: left;
+            width: 510px;
+            #manback{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                background-image: url('../img/buildback/mannequin.png');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            #gridback{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                background-image: url('../img/buildback/backgridblack.png');
+                background-size: 56%;
+                background-position: center;
+                background-repeat: no-repeat;
+                top: 9.5%;
+                left: 1.5%;
+            }
+            #fabricback{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                background-image: url('../img/buildback/backfabricblack.png');
+                background-size: 66%;
+                background-position: center;
+                background-repeat: no-repeat;
+                top: -21.1%;
+                left: 1%;
+            }
+            #bandsback{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                background-image: url('../img/buildback/backbandsblack.png');
+                background-size: 53%;
+                background-position: center;
+                background-repeat: no-repeat;
+                top: 23.5%;
+                left: 0.75%;
+            }
+            #manfront{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                background-image: url('../img/buildfront/mannequinfront.png');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            #fabricfront{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                background-image: url('../img/buildfront/frontfabricblack.png');
+                background-size: 59.5%;
+                background-position: center;
+                background-repeat: no-repeat;
+                top: -13%;
+            }
+            #zipperfront{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 10;
+                background-image: url('../img/buildfront/frontzipperblack.png');
+                background-size: 15.5%;
+                background-position: center;
+                background-repeat: no-repeat;
+                top: 27.25%;
+            }
+            #bandsfront{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                background-image: url('../img/buildfront/frontbandsblack.png');
+                background-size: 56%;
+                background-position: center;
+                background-repeat: no-repeat;
+                top: 26%;
+                left: -0.5%;
+            }
+            #manside{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                background-image: url('../img/buildside/mannequinside.png');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            #fabricside{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 10;
+                background-image: url('../img/buildside/sidefabricblack.png');
+                background-size: 44.75%;
+                background-position: center;
+                background-repeat: no-repeat;
+                top: -18%;
+                left: 2%;
+            }
+            #bandsside{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                background-image: url('../img/buildside/sidebandsblack.png');
+                background-size: 44%;
+                background-position: center;
+                background-repeat: no-repeat;
+                top: 21%;
+                left: -1%;
+            }
+            #gridside{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                background-image: url('../img/buildside/sidegridblack.png');
+                background-size: 15%;
+                background-position: center;
+                background-repeat: no-repeat;
+                top: 4.5%;
+                left: -15.75%;
+            }
+        }
     }
-    ul{
-        position: relative;
-        float: left;
+}
+
+#tabs{
+    position: relative;
+    float: left;
+    width: 40%;
+    transition: 0.3s;
+    li{
         width: 50%;
         font-family: $font-sub;
-        font-size: 14px;
+        color: $darkaccent;
+        font-size: $large-content-font-size;
+        line-height: 60px;
+        cursor: pointer;
+    }
+}
+
+.clicked{
+    border-bottom: 1px solid $main-color;
+}
+
+.tab-content{
+        position: relative;
+        float: left;
+        width: 60%;
+        font-family: $font-sub;
+        font-size: $large-content-font-size;
         margin-bottom: 20px;
-        li{
-            position: relative;
-            width: 200px;
-            height: 60px;
-            margin: 5px;
-            span{
+        ul{
+            position: absolute;
+            li{
                 position: relative;
-                float: left;
-                width: 60px;
+                width: 200px;
                 height: 60px;
-                border: 1px solid transparent;
-                border-radius: 100%;
-                box-shadow: 0 0 10px $darkaccent;
-            }
-            p{
-                position: relative;
-                float: left;
-                font-size: 14px;
-                width: 100px;
-                line-height: 60px;
-                margin-left: 5%;
-                font-family: $font-main;
-                font-style: italic; 
+                margin: 5px;
+                span{
+                    position: relative;
+                    float: left;
+                    width: 60px;
+                    height: 60px;
+                    border: 1px solid transparent;
+                    border-radius: 100%;
+                    box-shadow: 0 0 10px $darkaccent;
+                }
+                p{
+                    position: relative;
+                    float: left;
+                    font-size: $large-content-font-size;
+                    width: 100px;
+                    line-height: 60px;
+                    margin-left: 5%;
+                    font-family: $font-main;
+                    font-style: italic; 
+                }
             }
         }
         .black{
@@ -418,116 +610,12 @@ footer{
             color: $lightaccent;
         }
     }
-}
-
-#window{
-    position: relative;
-    width: 510px;
-    height: 600px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    background-color: $lightaccent;
-    #scroll{
-        width: 1530px;
-        transition: 0.25s; 
-        .customoutfit{
-            position: relative;
-            float: left;
-            width: 510px;
-            #man{
-                position: absolute;
-                width: 100%;
-                z-index: 0;
-                img{
-                    width: 100%;
-                }
-            }
-            #grid{
-                position: absolute;
-                width: 100%;
-                z-index: 5;
-                top: 0;
-                left: 0;
-                img{
-                    position: absolute;
-                    width:82%;
-                    top: 0.75%;
-                    left: 5%;
-                }
-            }
-            #lp{
-                position: absolute;
-                width: 100%;
-                z-index: 5;
-                top: 0;
-                left: 0;
-                img{
-                    position: absolute;
-                    width: 11%;
-                    top: 32.5%;
-                    left: 16.75%;
-                    z-index: 10;
-                }
-            }
-            #rp{
-                position: absolute;
-                width: 100%;
-                z-index: 5;
-                top: 0;
-                left: 0;
-                img{
-                    position: absolute;
-                    width: 13%;
-                    top: 34%;
-                    left: 71%;
-                    z-index: 10;
-                }
-            }
-            #tb{
-                position: absolute;
-                width: 100%;
-                top: 0;
-                left: 0;
-                img{
-                    position: absolute;
-                    width: 48.75%;
-                    top: 59.5%;
-                    left: 26%;
-                }
-            }
-            #mb{
-                position: absolute;
-                width: 100%;
-                top: 0;
-                left: 0;
-                img{
-                    position: absolute;
-                    width: 43.25%;
-                    top: 67%;
-                    left: 29.25%;
-                }
-            }
-            #bb{
-                position: absolute;
-                width: 100%;
-                top: 0;
-                left: 0;
-                img{
-                    position: absolute;
-                    width: 48%;
-                    top: 72%;
-                    left: 27.15%;
-                }
-            }
-        }
-    }
-}
 
 #scrollflip{
-    position: relative;
-    float: left;
-    width: 100vw;
-    height: 50px;
+    position: absolute;
+    top: 90%;
+    width: 100%;
+    height: 30px;
     z-index: 15;
     display: flex;
     align-items: center;
@@ -547,33 +635,42 @@ footer{
 }
 
 #sales{
-    width: 20%;
-    margin-right: 5%;
+    position: relative;
+    float: left;
+    width: 30%;
+    height: 60vh;
+    min-height: 500px;
+    margin-top: 2%;
     font-family: $font-sub;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     flex-direction: column;
     div{
         width: 85%;
         height: 70%;
-        margin-left: 20%;
+        float: right;
         h3{
             width: 48%;
             position: relative;
             float: left;
-            font-size: 16px;
+            font-size: $large-content-font-size;
+            font-family: $font-sub;
+            margin-top: 20px;   
+            margin-bottom: 20px; 
         }
         ul{
             position: relative;
             width: 48%;
             float: left;
             li{
-                font-size: 14px;
+                font-size: $large-content-font-size;
+                line-height: 30px;
             }
         }
-        div{
+        #total{
             position: relative;
+            float: left;
             width: 100%;
             height: 60px;
             margin-top: 30px;
@@ -583,11 +680,10 @@ footer{
         }
         p{
             position: relative;
+            float: left;
             width: 100%;
-            // text-align: center;
+            text-align: center;
             font-size: 8px;
-            top: 50%;
-            left: -15%;
         }
         button{
             position: relative;
@@ -595,8 +691,9 @@ footer{
             border: 2px solid $main-color;
             width: 80%;
             height: 10%;
-            font-family: $font-sub;
-            font-size: 14px;
+            font-family: $font-main;
+            font-style: italic;
+            font-size: $large-content-font-size;
             color: $darkaccent;
             margin-top: 10%;
             margin-left: 10%;
@@ -606,7 +703,6 @@ footer{
 }
 
 #backoptions{
-    position: relative;
     width: 510px;
     height: 600px;
     top: 0;
@@ -622,15 +718,15 @@ footer{
         cursor: pointer;
         &.grid{
             top: 25%;
-            left: 18%;
+            left: 24%;
         }
         &.fabric{
             top: 40%;
-            left: 71%;
+            left: 75%;
         }
         &.elastic{
-            top: 60%;
-            left: 24%;
+            top: 57%;
+            left: 28%;
         }
         &.grid:hover, &.fabric:hover, &.elastic:hover{
             background-color: $lightaccent;
@@ -638,21 +734,20 @@ footer{
     }
     p{
         position: absolute;
-        font-family: $font-sub;
         border-bottom: 1px solid $main-color;
         font-family: $font-main;
         font-style: italic; 
         &.grid{
             top: 25.5%;
-            left: 11%;
+            left: 15%;
         }
         &.fabric{
             top: 40%;
-            left: 61.5%;
+            left: 82%;
         }
         &.elastic{
-            top: 60%;
-            left: 14%;
+            top: 57%;
+            left: 17%;
         }
     }
 }
@@ -665,74 +760,1179 @@ footer{
     margin-left: 5px;
 }
 
-#navmargin{
-    position: relative;
-    float: left;
-    width: 5vw;
-    height: 100px;
+// -------------------- APPOINTMENT -----------------------
+.wrapper{
+    width: 100%;
+    height: 80vh;
+    min-height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    color: $darkaccent;
+
+    #calendarContainer{
+        width: 50%;
+        height: 100%;
+
+        .calendar{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: $font-sub;
+            transform: scale(1);
+            box-shadow: 0px 0px 4px rgba(21, 21, 21, 0.21);
+            user-select: none;
+
+            .year{
+                width: calc(100% - 10px);
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding: 5px;
+                font-size: $large-content-font-size;
+                background-color: $lightaccent;
+                span{
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                    align-items: center;
+                }
+                div{
+                    width: 7px;
+                    height: 7px;
+                    cursor: pointer;
+                    margin: 10px;
+                }
+                div:first-child{
+                    border-bottom: 2px solid $darkaccent;
+                    border-left: 2px solid $darkaccent;
+                    transform: rotate(45deg);
+                }
+                div:last-child{
+                    border-bottom: 2px solid $darkaccent;
+                    border-right: 2px solid $darkaccent;
+                    transform: rotate(-45deg);
+                }
+            }
+
+            .month{
+                width: calc(100% - 10px);
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 20px 5px;
+                font-size: 40px;
+                font-family: $font-main;
+                font-style: italic;
+                background-color: $main-color;
+                span{
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                    align-items: center;
+                    color: white;
+                }
+                div{
+                    width: 7px;
+                    height: 7px;
+                    cursor: pointer;
+                    margin: 10px;
+                }
+                div:first-child{
+                    border-bottom: 2px solid $darkaccent;
+                    border-left: 2px solid $darkaccent;
+                    transform: rotate(45deg);
+                }
+                div:last-child{
+                    border-bottom: 2px solid $darkaccent;
+                    border-right: 2px solid $darkaccent;
+                    transform: rotate(-45deg);
+                }
+            }
+            .labels{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                background-color: $lightaccent;
+                span{
+                    flex: 1;
+                    font-size: $large-sub-content-font-size;
+                    text-transform: uppercase;
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                    align-items: center;
+                    padding: 10px;
+                }
+            } 
+            .days{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                .row{
+                    width: 100%;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: row;
+                    .radios{
+                        display: none;
+                    } 
+                    .radios:checked + .day{
+                        background-color: rgba(21, 21, 21, 0.012); 
+                        box-shadow: inset 0px 0px 4px rgba(21, 21, 21, 0.21);
+                    }
+                    .day {
+                        flex: 1;
+                        padding: 5px;
+                        display: flex;
+                        flex-direction: row;
+                        border-bottom: 1px solid rgba(21, 21, 21, .12);
+                        border-right: 1px solid rgba(21, 21, 21, .12);
+                        cursor: pointer;
+                        transition: box-shadow 200ms ease-in-out;
+                        font-size: $large-content-font-size;
+                        color: $darkaccent;
+                        .diluted{
+                            background-color: rgba(21, 21, 21, 0.021);
+                            box-shadow: inset 0px 0px 1px rgba(21, 21, 21, 0.12);
+                            width: auto;
+                            font-size: $large-sub-content-font-size;
+                            color: rgba(21, 21, 21, 0.73);
+                        }
+                    } 
+                    .day:last-child{
+                        border-right: none;
+                    } 
+                    .day:hover{
+                        background-color: rgba(21, 21, 21, 0.012);
+                        box-shadow: inset 0px 0px 4px rgba(21, 21, 21, 0.21);
+                    }
+                    .selected{
+                        background-color: rgba(21, 21, 21, 0.012);
+                        box-shadow: inset 0px 0px 4px rgba(21, 21, 21, 0.21);
+                    }
+                }
+            } 
+        }
+    }
+
+    #organizerContainer{
+        width: 50%;
+        height: 100%;
+        margin-left: 8px;
+        .events{
+            width: 100%;
+            height: 100%;
+            font-family: $font-sub;
+            box-shadow: 0px 0px 4px rgba(21, 21, 21, 0.21);
+            display: flex;
+            flex-direction: column;
+            user-select: none;
+        }
+        .date{
+            width: calc(100%-10px);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: $large-content-font-size;
+            background-color: $lightaccent;
+            span{
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+            }
+            div{
+                width: 7px;
+                height: 7px;
+                cursor: pointer;
+                margin: 10px;
+            }
+            div:first-child{
+                border-bottom: 2px solid $darkaccent;
+                border-left: 2px solid $darkaccent;
+                transform: rotate(45deg);
+            }
+            div:last-child{
+                border-bottom: 2px solid $darkaccent;
+                border-right: 2px solid $darkaccent;
+                transform: rotate(-45deg);
+            }
+        }
+        .rows{
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .info{
+                position: relative;
+                font-family: $font-sub;
+                h1{
+                    position: relative;
+                    float: left;
+                    width: 40%;
+                    height: 50%;
+                    font-family: $font-main;
+                    font-style: normal;
+                    padding-left: 25px;
+                    font-size: $large-content-font-size;
+                }
+                .appt{
+                    width: 55%;
+                    position: relative;
+                    float: left;
+                    form{
+                        width: 100%;
+                    }
+                    input[type=radio]{
+                        display: none;
+                    }
+                    label {
+                        width: 100%;
+                        position: relative;
+                        float: left;
+                        margin-top: $leading;
+                        cursor: pointer;
+                        text-indent: 40px;
+                        line-height: 30px;
+                        font-size: 12px;
+                    }
+                    label:before{
+                        position: absolute;
+                        display: block;
+                        width: 30px;
+                        height: 30px;
+                        background-color: $lightaccent;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        content: '';
+                    }
+                    input.radio:checked ~ label:before {
+                        content:'\2714';
+                        text-indent: .5em;
+                        color: $main-color;
+                        background-color: $darkaccent;
+                    }
+                }
+                form{
+                    position: relative;
+                    float: left;
+                    width: 50%;
+                    div{
+                        position: relative;
+                        float: left;
+                        width: 100%;
+                        line-height: 3 * $leading;
+                        
+                        label{
+                            position: relative;
+                            float: left;
+                            width: 40%;
+                            font-size: 12px;
+                        }
+                        input, textarea{
+                            position: relative;
+                            float: left;
+                            width: 58%;
+                            font-size: 12px;
+                        }
+                    }
+                }
+                input[type=submit]{
+                    position: relative;
+                    background-color: transparent;
+                    border: 2px solid $main-color;
+                    width: 200px;
+                    height: 40px;
+                    font-family: $font-sub;
+                    font-size: $large-content-font-size;
+                    color: $darkaccent;
+                    cursor: pointer;
+                    margin-top: 3%;
+                    margin-left: 35%;
+                }
+            }
+        }
+    }
 }
 
 // -------------------- ABOUT SCREEN -----------------------
 #about{
     position: relative;
-    width: 70vw;
-    height: 500px;
-    margin: 40px auto;
+    height: 70vh;
+    min-height: 500px;
     background-image: url('../img/about.jpg');
     background-size: cover;
-    padding: 50px;
-
-    h1{
-        width: 400px;
-        font-family: $font-main;
-        font-style: italic;
-        border-bottom: 5px solid $main-color;
-        background-color: rgba(70,70,71, 0.9);
-        color: $lightaccent;
-        font-size: 36px;
-        margin-top: 20px;
-        padding: 20px;
-    }
-    p{
+    #text{
+        position: relative;
+        float: left;
         width: 400px;
         background-color: rgba(70,70,71, 0.9);
+        margin: 51px;
         color: $lightaccent;
-        font-family: $font-sub;
-        padding: 20px;
-    }
-}
-
-// -------------------- APPOINTMENT -----------------------
-#appointment{
-    width: 80vw;
-    height: 58vh;
-    margin: 40px auto;
-    display: flex;
-    justify-content: center;
-
-    .info{
-        width: 100%;
         h1{
             font-family: $font-main;
             font-style: italic;
-            line-height: 100px;
-        }
-        ul{
-            li{
-                list-style: circle;
-                font-family: $font-sub;
-            }
+            border-bottom: 5px solid $main-color;
+            font-size: $large-header-font-size;
+            padding: 8%;
         }
         p{
             font-family: $font-sub;
+            font-size: $large-content-font-size;
+            margin: 8%;
+        }
+    }
+}
+// -------------------- CONTACT SCREEN -----------------------
+
+#contact{
+    position: relative;
+    height: 30vh;
+    min-height: 300px;
+    background-image: url('../img/contact.jpg');
+    background-size: cover;
+    background-position: center;
+    #text{
+        position: relative;
+        float: left;
+        width: 400px;
+        background-color: rgba(70,70,71, 0.9);
+        margin: 51px;
+        color: $lightaccent;
+        p{
+            font-family: $font-sub;
+            font-size: $large-content-font-size;
+            padding: 4%;
+            span{
+                font-family: $font-main;
+                font-style: italic;
+                font-size: $small-header-font-size;
+                padding: 4%;
+            }
         }
     }
 }
 
-// ----------------------------------------------------------
-// IPADs and TABLETS
-// ----------------------------------------------------------
+// -------------------- TERMS SCREEN -----------------------
 
-@media only screen and (max-width: 960px){
+#terms{
+    width: 55vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1{
+        text-align: center;
+        padding: 20px;
+        font-size: $header-font-size;
+    }
+    p{
+        text-align: center;
+        width: 80%;
+        font-family: $font-sub;
+        font-size: $large-content-font-size;
+        opacity: 0.7;
+        line-height: 25px;
+    }
+}
 
+@media only screen and (max-width: 1300px){
+    // -------------------- BUILD SCREEN -----------------------
+    #customoptions{
+        width: 20%;
+    }
+
+    #window{
+        width: 510px;
+    }
+
+    #sales{
+        width: 20%;
+    }
+}
+
+@media only screen and (max-width: 1150px){
+    // -------------------- BUILD SCREEN -----------------------
+    #configurator{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #customoptions{
+        width: 100%;
+        height: 20vh;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h3{
+            font-size: $small-header-font-size;
+        }
+    }
+
+    #window{
+        width: 100%;
+    }
+
+    #tabs{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        li{
+            width: 25%;
+            text-align: center;
+            font-size: $small-content-font-size;
+        }
+    }
+
+    .tab-content{
+        width: 100%;
+        font-size: $small-content-font-size;
+        margin-top: 20px;
+        ul{
+            display: flex;
+            flex-direction: row;
+            li{
+                display: flex;
+                flex-direction: column;
+                p{
+                    font-size: $small-content-font-size; 
+                }
+            }
+        }
+    }
+
+    #sales{
+        width: 60%;
+        div{
+            width: 100%;
+            h3{
+                font-size: $small-content-font-size;
+            }
+            ul{
+                li{
+                    font-size: $small-content-font-size;
+                }
+            }
+            button{
+                font-size: $small-content-font-size;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px){
+    nav{
+        width: 95vw;
+        margin-bottom: $leading;
+        div{
+            img{
+                width: 5 * $leading;
+            }
+            p{
+                font-size: $small-content-font-size;
+            }
+            ul{
+                li{
+                    font-size: $small-content-font-size;
+                }
+            }
+        }
+    }
+
+    #announce{
+        font-size: $small-sub-content-font-size;
+    }
+
+    footer{
+        font-size: $small-sub-content-font-size;
+    }
+
+    h1{
+        font-size: $small-header-font-size;
+    }
+
+    #pageheader{
+        font-size: $small-header-font-size;
+    }
+
+    .container{
+        width: 100vw;
+    }
+
+    // --------------------- HOME SCREEN ------------------------
+    .mosaicgrid{
+        width: 60%;
+        h1{
+            font-size: $small-header-font-size;
+            padding-top: 5%;
+        }
+        p{
+            font-size: $small-content-font-size;
+        }
+    }
+
+    #wip{
+        width: 96.75%;
+        height: 40vh;
+        margin-top: 3 * $leading;
+    }
+
+    #build{
+        width: 96.75%;
+        height: 40vh;
+        margin-top: 3 * $leading;
+        margin-bottom: 3 * $leading;
+    }
+
+    #lookbook{
+        width: 99%;
+        margin-top: 3 * $leading;
+    }
+
+    // -------------------- APPOINTMENT -----------------------
+    .wrapper{
+        width: 98%;
+        height: 210vh;
+        min-height: 1200px;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1%;
+        #calendarContainer{
+            width: 100%;
+            height: 50%;
+            margin-bottom: 1%;
+            .calendar{
+                .year{
+                    font-size: $small-content-font-size;
+                }
+
+                .month{
+                    font-size: $large-header-font-size;
+                }
+                .labels{
+                    span{
+                        font-size: $small-sub-content-font-size;
+                    }
+                } 
+                .days{
+                    .row{
+                        .day {
+                            font-size: $small-content-font-size;
+                            .diluted{
+                                font-size: $small-sub-content-font-size;
+                            }
+                        }
+                    }
+                } 
+            }
+        }
+
+        #organizerContainer{
+            width: 100%;
+            height: 50%;
+            margin-left:0px;
+            .date{
+                font-size: $small-content-font-size;
+            }
+            .rows{
+                .info{
+                    h1{
+                        font-size: $small-content-font-size;
+                    }
+                    .appt{
+                        label {
+                            font-size: $small-content-font-size;
+                        }
+                    }
+                    form{
+                        div{
+                            label{
+                                font-size: $small-content-font-size;
+                            }
+                            input, textarea{
+                                font-size: $small-content-font-size;
+                            }
+                        }
+                    }
+                    input[type=submit]{
+                        font-size: $small-content-font-size;
+                    }
+                }
+            }
+        }
+    }
+
+    // -------------------- ABOUT SCREEN -----------------------
+    #about{
+        #text{
+            width: 300px;
+            h1{
+                font-size: $small-header-font-size;
+            }
+            p{
+                font-size: $small-content-font-size;
+            }
+        }
+    }
+    // -------------------- CONTACT SCREEN -----------------------
+
+    #contact{
+        #text{
+            p{
+                font-size: $small-content-font-size;
+            }
+        }
+    }
+
+    // -------------------- TERMS SCREEN -----------------------
+
+    #terms{
+        h1{
+            font-size: $small-header-font-size;
+        }
+        p{
+            font-size: $small-content-font-size;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    nav{
+        width: 90vw;
+        margin-bottom: $leading;
+        .hamburger-menu {
+            width: 100vw;
+            height: 3 * $leading;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            cursor: pointer;
+            .bar,
+            .bar:after,
+            .bar:before {
+                position: relative;
+                float: right;
+                width: 2 * $leading;
+                height: 0.25 * $leading;
+                background: $darkaccent;
+            }
+
+            .bar {
+                position: relative;
+                transform: translateY(1.25 * $leading);
+                background: $darkaccent;
+                transition: all 0ms 50ms;
+            
+                &.animate {
+                    background: rgba(255, 255, 255, 0); 
+                }
+            }
+
+            .bar:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0.5 * $leading;
+                transition: bottom 50ms 50ms cubic-bezier(0.23, 1, 0.32, 1), transform 50ms cubic-bezier(0.23, 1, 0.32, 1);
+            }
+
+            .bar:after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0.5 * $leading;
+                transition: top 50ms 50ms cubic-bezier(0.23, 1, 0.32, 1), transform 50ms cubic-bezier(0.23, 1, 0.32, 1);
+            }
+
+            .bar.animate:after {
+                top: 0;
+                transform: rotate(45deg);
+                transition: top 50ms cubic-bezier(0.23, 1, 0.32, 1), transform 50ms 50ms cubic-bezier(0.23, 1, 0.32, 1);;
+            }
+
+            .bar.animate:before {
+                bottom: 0;
+                transform: rotate(-45deg);
+                transition: bottom 50ms cubic-bezier(0.23, 1, 0.32, 1), transform 50ms 50ms cubic-bezier(0.23, 1, 0.32, 1);;
+            }
+        }
+        div{
+            img{
+                width: 5 * $leading;
+            }
+            p{
+                font-size: $small-content-font-size;
+            }
+        }
+        .full-screen{
+            display: none;
+        }
+        .mobile-view{
+            display: none;
+            position: fixed;
+            top: 10 * $leading;;
+            left: 0;
+            width: 100vw;
+            z-index: 40;
+            ul{
+                display: flex;
+                flex-direction: column;
+                width: 90vw;
+                li{
+                    width: 100%;
+                    font-size: $small-content-font-size;
+                    line-height: 4 * $leading;
+                    background-color: white;
+                    margin: 0;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    #pageheader{
+        font-size: $small-header-font-size;
+    }
+
+    .container{
+        width: 100vw;
+    }
+
+    footer{
+        width: 100vw;
+        p{
+            margin-left: 5%;
+        }
+        ul{
+            li{
+                margin-right: 5%;
+            }
+        }
+    }
+
+    // --------------------- HOME SCREEN ------------------------
+    .mosaicgrid{
+        width: 60%;
+        h1{
+            font-size: $small-header-font-size;
+            padding-top: 5%;
+        }
+        p{
+            font-size: $small-content-font-size;
+        }
+    }
+
+    #hometabs{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #wip{
+        width: 96.75%;
+        height: 40vh;
+        margin-top: 6 * $leading;
+    }
+
+    #build{
+        width: 96.75%;
+        height: 40vh;
+        margin-top: 6 * $leading;
+        margin-bottom: 3 * $leading;
+    }
+
+    #lookbook{
+        width: 99%;
+        margin-top: 3 * $leading;
+    }
+
+    // -------------------- BUILD SCREEN -----------------------
+    #customoptions{
+        h3{
+            font-size: $small-header-font-size;
+        }
+    }
+
+    #window{
+        margin-left: 17%;
+    }
+
+    #tabs{
+        li{
+            font-size: $small-content-font-size;
+        }
+    }
+
+    .tab-content{
+        font-size: $small-content-font-size;
+        ul{
+            li{
+                p{
+                    font-size: $small-content-font-size; 
+                }
+            }
+        }
+    }
+
+    #sales{
+        div{
+            h3{
+                font-size: $small-content-font-size;
+            }
+            ul{
+                li{
+                    font-size: $small-content-font-size;
+                }
+            }
+            button{
+                font-size: $small-content-font-size;
+            }
+        }
+    }
+
+    // -------------------- APPOINTMENT -----------------------
+    .wrapper{
+        width: 98%;
+        height: 210vh;
+        min-height: 1200px;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1%;
+        #calendarContainer{
+            width: 100%;
+            height: 50%;
+            margin-bottom: 1%;
+            .calendar{
+                .year{
+                    font-size: $small-content-font-size;
+                }
+
+                .month{
+                    font-size: $large-header-font-size;
+                }
+                .labels{
+                    span{
+                        font-size: $small-sub-content-font-size;
+                    }
+                } 
+                .days{
+                    .row{
+                        .day {
+                            font-size: $small-content-font-size;
+                            .diluted{
+                                font-size: $small-sub-content-font-size;
+                            }
+                        }
+                    }
+                } 
+            }
+        }
+
+        #organizerContainer{
+            width: 100%;
+            height: 50%;
+            margin-left:0px;
+            .date{
+                font-size: $small-content-font-size;
+            }
+            .rows{
+                .info{
+                    h1{
+                        font-size: $small-content-font-size;
+                    }
+                    .appt{
+                        label {
+                            font-size: $small-content-font-size;
+                        }
+                    }
+                    form{
+                        div{
+                            label{
+                                font-size: $small-content-font-size;
+                            }
+                            input, textarea{
+                                font-size: $small-content-font-size;
+                            }
+                        }
+                    }
+                    input[type=submit]{
+                        font-size: $small-content-font-size;
+                    }
+                }
+            }
+        }
+    }
+
+    // -------------------- ABOUT SCREEN -----------------------
+    #about{
+        // height: 
+        #text{
+            width: 300px;
+            h1{
+                font-size: $small-header-font-size;
+            }
+            p{
+                font-size: $small-content-font-size;
+            }
+        }
+    }
+    // -------------------- CONTACT SCREEN -----------------------
+
+    #contact{
+        #text{
+            p{
+                font-size: $small-content-font-size;
+            }
+        }
+    }
+
+    // -------------------- TERMS SCREEN -----------------------
+
+    #terms{
+        h1{
+            font-size: $small-header-font-size;
+        }
+        p{
+            font-size: $small-content-font-size;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 600px){
+    footer{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p{
+            margin-left: 0;
+        }
+        ul{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            li{
+                width: 100%;
+                text-align: center;
+                margin-left: 0;
+                text-decoration: none;
+            }
+        }
+    }
+    // --------------------- HOME SCREEN ------------------------
+    .mosaicgrid{
+        width: 90%;
+    }
+
+    #lookbook{
+        .mosaicgrid{
+            width: 100%;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            svg{
+                position: relative;
+                float: left;
+                width: 17 * $leading;
+                height: 2.5 * $leading;
+                line{
+                    stroke: $main-color;
+                    stroke-width: 2;
+                }
+            }
+            .links{
+                p{
+                    padding-top: 0%;
+                    padding-left: 5%;
+                    font-family: $font-main;
+                    color: $lightaccent;
+                }
+                p:hover{
+                    color: $main-color;
+                    transition: 0.2s;
+                }
+            }
+        }
+    }
+
+    #lookbook:hover{
+        opacity: 1;
+        .mosaicgrid{
+            height: 30%;
+        }
+    }
+
+    // -------------------- BUILD SCREEN -----------------------
+    #mobilemessage{
+        display: inherit;
+        width: 80%;
+        padding: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h1{
+            text-align: center;
+            padding: 20px;
+        }
+        p{
+            text-align: center;
+            width: 80%;
+            font-family: $font-sub;
+            font-size: $small-content-font-size;
+            opacity: 0.7;
+            line-height: 25px;
+        }
+    }
+
+    #customoptions{
+        display: none;
+    }
+
+    #window{
+        display: none;
+    }
+
+    #sales{
+        display: none;
+    }
+
+    // -------------------- APPOINTMENT -----------------------
+    .wrapper{
+        width: 98%;
+        height: 100vh;
+        min-height: 1500px;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1%;
+        #calendarContainer{
+            width: 100%;
+            height: 40%;
+            margin-bottom: 1%;
+            .calendar{
+                .year{
+                    font-size: $small-content-font-size;
+                }
+
+                .month{
+                    font-size: $large-header-font-size;
+                }
+                .labels{
+                    span{
+                        font-size: $small-sub-content-font-size;
+                    }
+                } 
+                .days{
+                    .row{
+                        .day {
+                            font-size: $small-content-font-size;
+                            .diluted{
+                                font-size: $small-sub-content-font-size;
+                            }
+                        }
+                    }
+                } 
+            }
+        }
+
+        #organizerContainer{
+            width: 100%;
+            height: 60%;
+            margin-left:0px;
+            .date{
+                font-size: $small-content-font-size;
+            }
+            .rows{
+                .info{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    h1{
+                        line-height: 60px;
+                        font-size: $small-content-font-size;
+                    }
+                    .appt{
+                        width: 40%;
+                        label {
+                            font-size: $small-content-font-size;
+                        }
+                    }
+                    form{
+                        width: 60%;
+                        div{
+                            line-height: 2.5 * $leading;
+                            margin: 2%;
+                            label{
+                                font-size: $small-content-font-size;
+                            }
+                            input, textarea{
+                                height: 22px;
+                                font-size: $small-content-font-size;
+                            }
+                        }
+                    }
+                    input[type=submit]{
+                        font-size: $small-content-font-size;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // -------------------- ABOUT SCREEN -----------------------
+    #about{
+        #text{
+            width: 300px;
+            h1{
+                font-size: $small-header-font-size;
+            }
+            p{
+                font-size: $small-content-font-size;
+            }
+        }
+    }
+    // -------------------- CONTACT SCREEN -----------------------
+
+    #contact{
+            height: 35vh;
+            min-height: 250px;
+        #text{
+            width: 300px;
+            p{
+                font-size: $small-content-font-size;
+                span{
+                    font-size: $content-font-size;
+                }
+            }
+        }
+    }
+
+    // -------------------- TERMS SCREEN -----------------------
+
+    #terms{
+        h1{
+            font-size: $small-header-font-size;
+        }
+        p{
+            font-size: $small-content-font-size;
+        }
+    }
 }
